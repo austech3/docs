@@ -958,7 +958,7 @@ object::
     use DateTime;
 
     // Add a cookie as an array using the immutable API (3.4.0+)
-    $this->response = $this->response->withCookie(new Cookie(
+    $this->response = $this->response->withCookie(new Cookie([
         'remember_me',
         'yes',
         new DateTime('+1 year'), // expiration time
@@ -966,7 +966,7 @@ object::
         '', // domain
         false, // secure
         true // httponly
-    ]);
+    ]));
 
     // Before 3.4.0
     $this->response->cookie('remember', [
